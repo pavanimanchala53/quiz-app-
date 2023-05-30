@@ -1,0 +1,25 @@
+<form action="/user/submit" method="POST">
+    {% for question in questions %}
+    <h3>{{ question[1] }}</h3>
+    <ul>
+        <li>
+            <input type="radio" name="{{ question[0] }}" value="1">
+            {{ question[2] }}
+        </li>
+        <li>
+            <input type="radio" name="{{ question[0] }}" value="2">
+            {{ question[3] }}
+        </li>
+        <li>
+            <input type="radio" name="{{ question[0] }}" value="3">
+            {{ question[4] }}
+        </li>
+        <li>
+            <input type="radio" name="{{ question[0] }}" value="4">
+            {{ question[5] }}
+        </li>
+    </ul>
+    {% endfor %}
+    <input type="submit" value="Submit Quiz">
+</form>
+

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Quiz</title>
+</head>
+<body>
+    <h1>View Quiz</h1>
+    <ul>
+        {% for question in questions %}
+        <li>
+            <strong>Question:</strong> {{ question[1] }}<br>
+            <strong>Option 1:</strong> {{ question[2] }}<br>
+            <strong>Option 2:</strong> {{ question[3] }}<br>
+            <strong>Option 3:</strong> {{ question[4] }}<br>
+            <strong>Option 4:</strong> {{ question[5] }}<br>
+            <strong>Correct Option:</strong> {{ question[6] }}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

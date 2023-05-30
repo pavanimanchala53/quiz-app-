@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+</head>
+<body>
+    <h1>Admin Panel</h1>
+    <a href="/admin/view_quiz">View Quiz</a>
+    <a href="/admin/create_quiz">Create Quiz</a>
+
+    <h2>Add New Question</h2>
+    <form action="/admin" method="POST">
+        <label for="question">Question:</label>
+        <input type="text" name="question" required><br>
+        <label for="option1">Option 1:</label>
+        <input type="text" name="option1" required><br>
+        <label for="option2">Option 2:</label>
+        <input type="text" name="option2" required><br>
+        <label for="option3">Option 3:</label>
+        <input type="text" name="option3" required><br>
+        <label for="option4">Option 4:</label>
+        <input type="text" name="option4" required><br>
+        <label for="technology">Technology:</label>
+        <input type="text" name="technology" required><br>
+        <label for="correct_option">Correct Option:</label>
+        <input type="text" name="correct_option" required><br>
+        <input type="submit" value="Add Question">
+    </form>
+    <hr>
+    <h2>Existing Questions:</h2>
+    <ul>
+        {% for question in questions %}
+        <li>
+            <strong>Question:</strong> {{ question[1] }}<br>
+            <strong>Option 1:</strong> {{ question[2] }}<br>
+            <strong>Option 2:</strong> {{ question[3] }}<br>
+            <strong>Option 3:</strong> {{ question[4] }}<br>
+            <strong>Option 4:</strong> {{ question[5] }}<br>
+            <strong>Technology:</strong> {{ question[6] }}<br>
+            <strong>Correct Option:</strong> {{ question[7] }}<br>
+            <form action="/admin/delete/{{ question[0] }}" method="POST">
+                <input type="submit" value="Delete">
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+

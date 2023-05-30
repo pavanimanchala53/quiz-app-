@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Quiz</title>
+</head>
+<body>
+    <h1>Create Quiz</h1>
+    <form action="/admin/create_quiz" method="POST">
+        <ul>
+            {% for question in questions %}
+            <li>
+                <input type="checkbox" name="selected_questions" value="{{ question[0] }}">
+                {{ question[1] }}
+            </li>
+            {% endfor %}
+        </ul>
+        <input type="submit" value="Create Quiz">
+    </form>
+</body>
+</html>
